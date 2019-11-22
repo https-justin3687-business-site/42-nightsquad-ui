@@ -1,7 +1,7 @@
 {
   "name": "ui-42-theme",
   "theme": "ui",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A atom theme for 42 student by 42 student",
   "keywords": [
     "ui",
