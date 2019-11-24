@@ -20,6 +20,10 @@ atom-pane {
   }
 }
 
+atom-pane-container atom-pane .item-views > *, atom-pane-container atom-pane .item-views > atom-text-editor.react > * {
+	background-color: @back_color;
+}
+
 .list-group li:not(.list-nested-item).status-modified, .list-tree li:not(.list-nested-item).status-modified, .list-group li.list-nested-item.status-modified > .list-item, .list-tree li.list-nested-item.status-modified > .list-item {
     color: #e2c08d;
 }
