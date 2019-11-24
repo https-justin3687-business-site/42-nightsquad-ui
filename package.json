@@ -1,7 +1,7 @@
 {
   "name": "42-nightsquad-ui",
   "theme": "ui",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A atom theme for 42 student by 42 student",
   "keywords": [
     "ui",
@@ -12,23 +12,23 @@
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
-},
+  },
   "package-deps": [
-  "42-nightsquad-syntax"
+    "42-nightsquad-syntax"
   ],
   "configSchema": {
-  "coal": {
-  "title": "42 coalition settings ",
-  "description": "Here you can define your coalition",
-  "type": "string",
-  "default": "The Order",
-  "enum": [
-	"The Order",
-	"The Assembly",
-	"The Alliance",
-	"The Federation"
-  ],
-  "order": 1
-}
-}
+    "coal": {
+      "title": "42 coalition settings ",
+      "description": "Here you can define your coalition",
+      "type": "string",
+      "default": "The Order",
+      "enum": [
+        "The Order",
+        "The Assembly",
+        "The Alliance",
+        "The Federation"
+      ],
+      "order": 1
+    }
+  }
 }
