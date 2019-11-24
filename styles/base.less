@@ -13,21 +13,37 @@ body {
   color: @text-color;
   background-color: @back_color;
 }
-.status-modified {
-	text-shadow: 2px 2px 5px black;
-}
-
-.status-added {
-	color: #40A977 !important;
-
-}
-
-.status-ignored {
-	color: #FB6049 !important;
-}
 atom-pane {
   border-right: 1px solid @base-border-color;
   &:last-child {
     border-right: none;
   }
+}
+
+.list-group li:not(.list-nested-item).status-modified, .list-tree li:not(.list-nested-item).status-modified, .list-group li.list-nested-item.status-modified > .list-item, .list-tree li.list-nested-item.status-modified > .list-item {
+    color: #e2c08d;
+}
+.list-group li:not(.list-nested-item), .list-tree li:not(.list-nested-item), .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
+    font-weight: normal;
+    color: #9da5b4;
+}
+
+atom-text-editor[mini].is-focused {
+     outline: none;
+     border-color: #568af2;
+     box-shadow: 0 0 0 1px #568af2;
+     background-color: #202634;
+ }
+.find-and-replace.has-no-results .find-container atom-text-editor[mini].is-focused {
+	outline: none;
+	border-color: red;
+	box-shadow: 0 0 0 1px red;
+	background-color: #202634;
+}
+
+.find-and-replace.has-results .find-container atom-text-editor[mini].is-focused {
+	outline: none;
+	border-color: green;
+	box-shadow: 0 0 0 1px green;
+	background-color: #202634;
 }

@@ -7,9 +7,28 @@
     "ui",
     "theme"
   ],
+  "main": "lib/main",
   "repository": "https://github.com/Night-squad/42-nightsquad-ui",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
-  }
+},
+  "package-deps": [
+  "42-nightsquad-syntax"
+  ],
+  "configSchema": {
+  "coal": {
+  "title": "42 coalition settings ",
+  "description": "Here you can define your coalition",
+  "type": "string",
+  "default": "The Order",
+  "enum": [
+	"The Order",
+	"The Assembly",
+	"The Alliance",
+	"The Federation"
+  ],
+  "order": 1
+}
+}
 }

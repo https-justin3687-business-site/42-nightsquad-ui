@@ -13,6 +13,28 @@
 .tab sortable active {
 	width: 100%;
 }
+
+.tab-bar .tab .close-icon {
+	position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    z-index: 2;
+    font-size: 1em;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5;
+    text-align: center;
+    border-radius: 3px;
+    background-color: inherit;
+    overflow: hidden;
+    // transform: scale(0);
+    // transition: transform .08s;
+}
+
+.tab-bar .tab .close-icon:hover {
+	background-color: @order;
+	color: white;
+}
 .list-inline {
 
   &.active {
@@ -21,6 +43,10 @@
 	color: @text-color-selected;
 	background-color: @light_grey;
   }
+}
+atom-dock .tab-bar .tab, atom-dock .tab-bar .tab.active {
+    max-width: none;
+	text-align: center;
 }
 .tab-bar {
   background-color: @back_color;
