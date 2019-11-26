@@ -20,6 +20,12 @@ atom-pane {
   }
 }
 
+.atom-dock-resize-handle.left, .atom-dock-resize-handle.right {
+    background-color: @purple_grey;
+	width: 1px;
+
+}
+
 atom-pane-container atom-pane .item-views > *, atom-pane-container atom-pane .item-views > atom-text-editor.react > * {
 	background-color: @back_color;
 }
@@ -50,4 +56,50 @@ atom-text-editor[mini].is-focused {
 	border-color: green;
 	box-shadow: 0 0 0 1px green;
 	background-color: #202634;
+}
+.scrollbars-visible-always {
+	::-webkit-scrollbar {
+		width: 10px;
+		height: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: @back_color;
+	}
+
+	::-webkit-scrollbar-thumb {
+		border-radius: 5px;
+		border: 3px solid @back_color;
+		background: @light_grey;
+		background-clip: content-box;
+	}
+
+	::-webkit-scrollbar-corner {
+		background: @back_color;
+	}
+
+	::-webkit-scrollbar-thumb:vertical:active {
+		border-radius: 0;
+		border-left-width: 0;
+		border-right-width: 0;
+	}
+
+	::-webkit-scrollbar-thumb:horizontal:active {
+		border-radius: 0;
+		border-top-width: 0;
+		border-bottom-width: 0;
+	}
+
+	atom-text-editor {
+		::-webkit-scrollbar-track {
+			background: @back_color;
+		}
+		::-webkit-scrollbar-corner {
+			background: @back_color;
+		}
+		::-webkit-scrollbar-thumb {
+			border-color: @back_color;
+			background: @light_grey;
+		}
+	}
 }
