@@ -26,6 +26,10 @@ atom-pane {
 
 }
 
+.list-group li:not(.list-nested-item).selected.status-added, .list-tree li:not(.list-nested-item).selected.status-added, .list-group li.list-nested-item.selected.status-added > .list-item, .list-tree li.list-nested-item.selected.status-added > .list-item {
+    color: #73c990 !important;
+}
+
 atom-pane-container atom-pane .item-views > *, atom-pane-container atom-pane .item-views > atom-text-editor.react > * {
 	background-color: @back_color;
 }
