@@ -39,7 +39,7 @@
 
   &.active {
 	 width: 50%;
-	border-top: 3px solid @order;
+	border-top: 3px solid @order !important;
 	color: @text-color-selected;
 	background-color: @light_grey;
   }
@@ -50,17 +50,17 @@ atom-dock .tab-bar .tab, atom-dock .tab-bar .tab.active {
 }
 .tab-bar {
   background-color: @back_color;
-  border-bottom: 3px solid @back_color;
+  border-bottom: 3px solid @back_color !important;
 
   .tab {
     color: @text-color;
     height: @tab-height;
     line-height: @tab-height;
     font-size: @font-size;
-	border-top: 3px solid @purple_grey;
+	border-top: 3px solid @purple_grey !important;
     background-color: @back_color;
     &.active {
-	  border-top: 3px solid @order;
+	  border-top: 3px solid @order !important;
       color: @text-color-selected;
       background-color: @light_grey;
     }
@@ -88,13 +88,129 @@ atom-dock .tab-bar .tab, atom-dock .tab-bar .tab.active {
 
     // Dragging -------------------
     // Styles get applied while dragging a tab
-    &.is-dragging {
-      background: darken(@tab-background-color, 10%);
-      border-color: transparent;
-      opacity: .5;
-      & .close-icon {
-        visibility: hidden;
+    // &.is-dragging {
+    //   background: darken(@tab-backg2round-color, 10%);
+    //   border-color: transparent;
+    //   opacity: .5;
+    //   & .close-icon {
+    //     visibility: hidden;
+    //   }
+    // }
+  }
+}
+
+@ui-tab-height: @tab-height;
+@tab-text-color : white;
+
+// Tabs
+
+// @tab-border: 1px solid @tab-border-color;
+@title-padding: .66em;
+@icon-padding-top: .5em; // 2.5 (total) - 1.5 (text) / 2
+@icon-padding-right: .5em;
+
+.tab-bar {
+  // position: relative;
+  // height: @ui-tab-height;
+  // box-shadow: inset 0 -1px 0 @tab-border-color;
+  // background: @tab-bar-background-color;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 0;
+  
+  &:empty {
+    display: none;
+  }
+
+  // Modified icon ----------------------
+
+  .tab.modified {
+    &:hover .close-icon {
+      color: @accent-color;
+      &:hover {
+        color: @accent-bg-text-color;
+      }
+    }
+    &:not(:hover) .close-icon {
+      top: @icon-padding-top;
+      right: @icon-padding-right;
+      width: 1.5em;
+      height: 1.5em;
+      line-height: 1.5;
+      color: @accent-color;
+      // border-radius: @component-border-radius;
+      border: none;
+      transform: scale(1);
+      &::before {
+        content: "\f052";
+        display: inline-block;
       }
     }
   }
+
+  // Dragging ----------------------
+
+  .tab.is-dragging {
+    opacity: .5;
+
+    .close-icon,
+    &:before {
+      visibility: hidden;
+    }
+  }
+
+  .placeholder {
+    position: relative;
+    pointer-events: none;
+
+    // bar
+    &:before {
+      z-index: 1;
+      margin: 0;
+      width: 2px;
+      height: @ui-tab-height;
+      background-color: @accent-color;
+    }
+
+    // arrow
+    &:after {
+      z-index: 0;
+      top: @ui-tab-height/2;
+      margin: -4px 0 0 -3px;
+      // border-radius: 0;
+      // border: 4px solid @accent-color;
+      transform: rotate(45deg);
+      background: transparent;
+    }
+
+    &:last-child {1
+      &:before {
+        margin-left: -2px;
+      }
+      &:after {
+        transform: none;
+        margin-left: -10px;
+        border-color: transparent @accent-color transparent transparent;
+      }
+    }
+  }
+
+
+  // Overrides ----------------------
+
+  // keep tabs same size when active
+  .tab,
+  .tab.active {
+    padding-right: 0;
+    .title {
+      padding: 0;
+    }
+  }
+}
+
+
+
+// hide marker in docks
+atom-dock .tab-bar .tab::before {
+  display: none;
 }
